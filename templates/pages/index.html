@@ -112,7 +112,7 @@
         <div class="col-4">
           <ul class="nav">
             {% for cat in category|slice:'5' %}
-            <li class="nav-item">
+            <li class="nav-item cat{{cat.id}}">
               <a id="" class="nav-link bg-primary" href="#">{{cat.name}}</a>
             </li>
             {% endfor %}

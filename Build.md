@@ -506,6 +506,7 @@ def update(request, id):
 
 ```
 _____________________________
+_____________________________
 ## Delete Item 
 #### 1 - Create Path Open File urls.py Inside Project [ 📝 ]
 ```
@@ -592,6 +593,12 @@ def delete(request, id):
         return redirect("/")
     return render(request, "pages/delete.html")
 ```
+
+_____________________________
+_____________________________
+## Configure category links in the navbar
+### تهيئة روابط ال category و الروابط بشكل عام في الموقع
+### 1 - Open File Index.html [ 📝 ]
 
 _____________________________
 _____________________________
