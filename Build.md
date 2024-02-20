@@ -597,8 +597,58 @@ def delete(request, id):
 _____________________________
 _____________________________
 ## Configure category links in the navbar
-### تهيئة روابط ال category و الروابط بشكل عام في الموقع
+### تهيئة روابط ال Category و الروابط بشكل عام في الموقع
 ### 1 - Open File Index.html [ 📝 ]
+#### اضافة كلاس لكل عنصر من عناصر الاقصام عن طريق ال Id
+```
+<ul class="nav">
+  {% for cat in category|slice:'5' %}
+  <li class="nav-item cat{{cat.id}}">
+    <a id="" class="nav-link bg-primary" href="#">{{cat.name}}</a>
+  </li>
+  {% endfor %}
+</ul>
+```
+#### اضافة كلاس على كل عنصر من عناصر الكتاب الكلاس الاول لاخفاء جميع الكتب و الكلاس الثانى لاظهار الكتب اللى ال Id بيساوى ال الخاص بى نوع من انواع الاقسام
+```
+{% for item in items %}
+<div class="bookHide book{{item.category.id}} book{{item.status}}">
+</div>
+```
+### 2 - Open File Sidebar.html [ 📝 ]
+```
+{% for cat in category %}
+<li class="cat{{cat.id}}"></li>
+{% endfor %}
+
+<li class="nav-item statussold">
+</li>
+<li class="nav-item statusrental">
+</li>
+<li class="nav-item statusavailable">
+</li>
+<!-- Linke Index -->
+<a href="{% url 'index' %}" >Home</a>
+<a href="{% url 'books' %}" >Books</a>
+
+```
+### 3 - Open File Script.html [ 📝 ]
+#### Add a JavaScript function to hide and show elements based on categories
+#### أضف وظيفة JavaScript لإخفاء العناصر وإظهارها بناءً على الفئات
+```
+<script>
+  {% for item in items %}
+  $(".cat{{item.category.id}}").click(function(){
+    $(".bookHide").hide()
+    $(".book{{item.category.id}}").show()
+  })
+  $(".status{{item.status}}").click(function(){
+    $(".bookHide").hide()
+    $(".book{{item.status}}").show()
+  })
+  {% endfor %}
+</script>
+```
 
 _____________________________
 _____________________________

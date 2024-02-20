@@ -4,20 +4,34 @@
 
 <!-- REQUIRED SCRIPTS -->
 <script>
-  $('#formCategory').hide();
-  $('#addcat').click(function(){
-    $('#formCategory').show();
+  $("#formCategory").hide();
+  $("#addcat").click(function () {
+    $("#formCategory").show();
   });
-  
-  $('#backcat').click(function(){
-    $('#formCategory').hide();
+
+  $("#backcat").click(function () {
+    $("#formCategory").hide();
   });
 </script>
 
-<!-- REQUIRED SCRIPTS -->
-{% comment %} <script src="{% static 'plugins/jquery_datepacker/jquery_ui.js' %}"></script> {% endcomment %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js">
+<script>
+  {% for item in items %}
+  $(".cat{{item.category.id}}").click(function(){
+    $(".bookHide").hide()
+    $(".book{{item.category.id}}").show()
+  })
+  $(".status{{item.status}}").click(function(){
+    $(".bookHide").hide()
+    $(".book{{item.status}}").show()
+  })
+  {% endfor %}
 </script>
+
+<!-- REQUIRED SCRIPTS -->
+{% comment %}
+<script src="{% static 'plugins/jquery_datepacker/jquery_ui.js' %}"></script>
+{% endcomment %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 
 <!-- Bootstrap -->
 <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
