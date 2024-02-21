@@ -659,5 +659,29 @@ backend\Scripts\activate
 python manage.py runserver
 ```
 
+_____________________________
+## Deploy To PythonAnywhere 
+1. Sign Up/Log In to PythonAnywhere
+2. Create A New Project
+3. Clone The Repository
+```
+pwd
+git clone https://github.com/LearnCodingEasy/management_system.git
+```
+### انتقل إلى مجلد المشروع:
 
-d
+```
+cd management_system
+```
+
+### Create Virtualenv
+### قم بإنشاء بيئة افتراضية وتنشيطها:
+```
+python3 -m venv backend
+source backend/bin/activate
+```
+### قم بتثبيت المكتبات المطلوبة:
+```
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
