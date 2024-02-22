@@ -685,3 +685,33 @@ source backend/bin/activate
 pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
+
+### قم بتهيئة مشروع Django باستخدام الأمر:
+```
+python manage.py collectstatic
+```
+```
+python manage.py migrate
+```
+### Go To [ 👉️ ]
+```
+https://www.pythonanywhere.com/user/rashadhossamrashad/webapps/#tab_id_rashadhossamrashad_pythonanywhere_com
+```
+### 1 - Click To [ Add a New Web App ]
+### 2 - Your Web App's Domain Name [ Click On Next ]
+### 3 - Select a Python Web Framework [ Click On Menual Configuration ]
+### 4 - Select Python Varsion [ Click On Python 3.10 ]
+### 5 - Manual Configuration [ Click On Next ]
+### 6 -  Virtualenv  Location [  ]
+eg: /home/rashadhossamrashad/backend [ ❌ ]
+eg: /home/rashadhossamrashad/.virtualenvs/backend [ ❌ ]
+
+_____________________________
+## 1 - git clone https://github.com/LearnCodingEasy/management_system.git
+## 2 - mkvitrualenv venv  
+## 3 - pwd 
+## 4 - cd management_system
+## 5 - pip install -r requirements.txt
+## 6 - 
+## 7 - 
+## 8 - 
