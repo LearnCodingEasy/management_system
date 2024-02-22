@@ -123,10 +123,16 @@ STATICFILES_DIRS = [
 ]
 
 
-# settings.py
 # Media إعدادات ال 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# MIME  لتحديد انواع للملفات 
+MIME_TYPES = {
+    'css': 'text/css',
+    'js': 'application/javascript',
+}
+
 
 
 # Default primary key field type

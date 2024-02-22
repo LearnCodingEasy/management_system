@@ -656,62 +656,120 @@ _____________________________
 # Usfull Commends 
 ```
 backend\Scripts\activate
+python manage.py collectstatic
+python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver
 ```
 
 _____________________________
-## Deploy To PythonAnywhere 
-1. Sign Up/Log In to PythonAnywhere
-2. Create A New Project
-3. Clone The Repository
+_____________________________
+_____________________________
+
+## Update Project On Github
+- Create Repository
+- Clone the repository from your account to your local machine using this command: `git clone https
+://github.com/[YourUsername]/LibraryManagementSystem.git`
+
+_____________________________
+_____________________________
+_____________________________
+## Deploy Django On Pythonanywhere 
+
+### 1. Go To => [ https://www.pythonanywhere.com ] 🌍
+### 2. Click On Pricing [ 🖱️ ]
+### 3. Click On Create Beginner Account [ 🖱️ ]
+### 3. Sign Up/Log In to PythonAnywhere
+### 4. Create On Bash
+### 5. Clone The Repository
 ```
 pwd
-git clone https://github.com/LearnCodingEasy/management_system.git
+git clone https://github.com/LearnCodingEasy/management_system
+mkvirtualenv --python=/usr/bin/python3.9 backend
+pip install django
 ```
-### انتقل إلى مجلد المشروع:
+### 6. Go To Dashboard [ https://www.pythonanywhere.com/user/rashadhossamrashad/ ] 
+### 7. Click On Open Web Tab
+### 8. Click To [ Add a New Web App ]
+### 9. Your Web App's Domain Name [ Click On Next ]
+### 10. Select a Python Web Framework [ Click On Menual Configuration ]
+### 11. Select Python Varsion [ Click On Python 3.10 ]
+### 12. Manual Configuration [ Click On Next ]
+### 13. New You Are On Page [ https://www.pythonanywhere.com/user/rashadhossamrashad/webapps/#tab_id_rashadhossamrashad_pythonanywhere_com ]
+### 14. Go To Virtualenv  Location On Page And Type [ backend ]
+### 15. Click On WSGI configuration file
+### 16. Type This
+```
+# This file contains the WSGI configuration required to serve up your
+# web application at http://rashadhossamrashad.pythonanywhere.com/
+# It works by setting the variable 'application' to a WSGI handler of some
+# description.
+#
 
+# +++++++++++ GENERAL DEBUGGING TIPS +++++++++++
+# getting imports and sys.path right can be fiddly!
+# We've tried to collect some general tips here:
+# https://help.pythonanywhere.com/pages/DebuggingImportError
+
+# +++++++++++ DJANGO +++++++++++
+# To use your own django app use code like this:
+import os
+import sys
+#
+## assuming your django settings file is at '/home/rashadhossamrashad/mysite/mysite/settings.py'
+## and your manage.py is is at '/home/rashadhossamrashad/mysite/manage.py'
+path = '/home/rashadhossamrashad/mysite'
+if path not in sys.path:
+    sys.path.append(path)
+#
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+#
+## then:
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+```
+### 17. Go To Bash 
 ```
 cd management_system
 ```
+### 18. Get Your Path 
+```
+pwd
+```
+### 19. Copy The Output And Paste Into `Path` Variable At PythonAnyWhere In `WSGI Configuration File`.
+```
+/home/rashadhossamrashad/management_system
+```
+### 20. Go To 
+```
+https://www.pythonanywhere.com/user/rashadhossamrashad/files/var/www/rashadhossamrashad_pythonanywhere_com_wsgi.py?edit
+```
+### 21. Chenge Path To 
+```
+/home/rashadhossamrashad/management_system
+```
+### 22. Chinge [os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'] To [os.environ['DJANGO_SETTINGS_MODULE'] = 'backend.settings']
+### 23. Click On Save
+### 24. Go To 
+```
+https://www.pythonanywhere.com/user/rashadhossamrashad/files/home/rashadhossamrashad
+```
+### 25. Click On Your Project 
+### 26. Go To Setting.py 
+### 27. Add This Line In Settings Py
+```
+ALLOWED_HOSTS = ['rashadhossamrashad.pythonanywhere.com']
+```
+### 28. Save It.
+### 29. Go To [https://www.pythonanywhere.com/user/rashadhossamrashad/webapps/#tab_id_rashadhossamrashad_pythonanywhere_com] 
+### 30. Click On Reload 
+### 31. Click On [ http://rashadhossamrashad.pythonanywhere.com/ ]
+##################################
+##################################
+##################################
+##################################
 
-### Create Virtualenv
-### قم بإنشاء بيئة افتراضية وتنشيطها:
-```
-python3 -m venv backend
-source backend/bin/activate
-```
 ### قم بتثبيت المكتبات المطلوبة:
 ```
 pip freeze > requirements.txt
-pip install -r requirements.txt
 ```
-
-### قم بتهيئة مشروع Django باستخدام الأمر:
-```
-python manage.py collectstatic
-```
-```
-python manage.py migrate
-```
-### Go To [ 👉️ ]
-```
-https://www.pythonanywhere.com/user/rashadhossamrashad/webapps/#tab_id_rashadhossamrashad_pythonanywhere_com
-```
-### 1 - Click To [ Add a New Web App ]
-### 2 - Your Web App's Domain Name [ Click On Next ]
-### 3 - Select a Python Web Framework [ Click On Menual Configuration ]
-### 4 - Select Python Varsion [ Click On Python 3.10 ]
-### 5 - Manual Configuration [ Click On Next ]
-### 6 -  Virtualenv  Location [  ]
-eg: /home/rashadhossamrashad/backend [ ❌ ]
-eg: /home/rashadhossamrashad/.virtualenvs/backend [ ❌ ]
-
-_____________________________
-## 1 - git clone https://github.com/LearnCodingEasy/management_system.git
-## 2 - mkvitrualenv venv  
-## 3 - pwd 
-## 4 - cd management_system
-## 5 - pip install -r requirements.txt
-## 6 - 
-## 7 - 
-## 8 - 
