@@ -659,6 +659,7 @@ backend\Scripts\activate
 python manage.py collectstatic
 python manage.py makemigrations
 python manage.py migrate
+pip freeze > requirements.txt
 python manage.py runserver
 ```
 
@@ -764,12 +765,4 @@ ALLOWED_HOSTS = ['rashadhossamrashad.pythonanywhere.com']
 ### 29. Go To [https://www.pythonanywhere.com/user/rashadhossamrashad/webapps/#tab_id_rashadhossamrashad_pythonanywhere_com] 
 ### 30. Click On Reload 
 ### 31. Click On [ http://rashadhossamrashad.pythonanywhere.com/ ]
-##################################
-##################################
-##################################
-##################################
 
-### قم بتثبيت المكتبات المطلوبة:
-```
-pip freeze > requirements.txt
-```
